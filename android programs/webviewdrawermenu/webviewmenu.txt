@@ -1,0 +1,246 @@
+main xml///////////////////////////////////
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/webid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+///////////////////////////////////////////
+
+mainactivity java/////////////////////////////////
+package com.example.experimentwebapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class MainActivity extends AppCompatActivity {
+    WebView myWeb;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        myWeb=(WebView)findViewById(R.id.webid);
+        WebSettings ws=myWeb.getSettings();
+        ws.setJavaScriptEnabled(true);
+
+        myWeb.loadUrl("file:///android_asset/drawermenu.html");
+    }
+}
+themes   ////////////////////////////////
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Experimentwebapp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
+drawer menu.html//////////////////////////////
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>RESPONSIVE NAVBAR</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="preload">
+<header class="header">
+    <button class="header__button" id="btnNav" type="button1">
+        <i class="material-icons"><img src="icons/menu/whiteicon/1x/menu24.png"></i>
+    </button>
+</header>
+<nav class="nav">
+    <div class="nav__links">
+        <div style="background: blue; height: 100px">
+            Title
+        </div>
+        <a href="#" class="nav__link">
+            <i class="material-icons"><img src="icons/dashboard/1x/dashboard24.png"></i>
+            Dashboard
+        </a>
+        <a href="#" class="nav__link nav__link--active">
+            <i class="material-icons"><img src="icons/projects/1x/projects24.png"></i>
+            Projects
+        </a>
+        <a href="#" class="nav__link">
+            <i class="material-icons"><img src="icons/security/1x/security24.png"></i>
+            Security
+        </a>
+        <a href="#" class="nav__link">
+            <i class="material-icons"><img src="icons/history/1x/history24.png"></i>
+            History
+        </a>
+        <a href="#" class="nav__link">
+            <i class="material-icons"><img src="icons/profile/1x/profile24.png"></i>
+            Profile
+        </a>
+    </div>
+    <div class="nav__overlay"></div>
+</nav>
+
+<main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo a diam sollicitudin tempor id. Nulla at volutpat diam ut. Turpis massa sed elementum tempus egestas sed. Eget gravida cum sociis natoque. Id eu nisl nunc mi ipsum. Sed faucibus turpis in eu mi bibendum neque egestas. Sit amet mauris commodo quis imperdiet massa. Praesent elementum facilisis leo vel fringilla. Neque gravida in fermentum et sollicitudin. Fermentum iaculis eu non diam phasellus vestibulum. Porttitor leo a diam sollicitudin tempor id eu nisl. Congue quisque egestas diam in arcu cursus euismod quis viverra. Consectetur adipiscing elit pellentesque habitant morbi tristique.</p>
+
+    <p>Nisl purus in mollis nunc sed id semper. Vitae ultricies leo integer malesuada nunc. Id aliquet risus feugiat in ante metus dictum. Ac orci phasellus egestas tellus rutrum tellus. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. In mollis nunc sed id semper risus. Purus in massa tempor nec feugiat nisl. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Tellus mauris a diam maecenas sed. Urna id volutpat lacus laoreet non curabitur gravida.</p>
+
+    <p>Semper viverra nam libero justo laoreet sit. Arcu dui vivamus arcu felis bibendum ut. Imperdiet dui accumsan sit amet nulla facilisi morbi. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Ac felis donec et odio pellentesque diam volutpat commodo. Nunc eget lorem dolor sed. Nunc congue nisi vitae suscipit tellus mauris a. Est ultricies integer quis auctor elit sed vulputate. Viverra mauris in aliquam sem fringilla ut morbi. Sed id semper risus in hendrerit.</p>
+
+    <p>Tristique senectus et netus et malesuada fames ac. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Nullam vehicula ipsum a arcu cursus vitae congue mauris. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. In fermentum et sollicitudin ac orci phasellus. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Non consectetur a erat nam. Nascetur ridiculus mus mauris vitae ultricies. Integer enim neque volutpat ac tincidunt.</p>
+
+    <p>Quam id leo in vitae turpis massa sed. Tempor orci dapibus ultrices in iaculis nunc. At risus viverra adipiscing at in tellus. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Libero justo laoreet sit amet cursus sit. Nunc non blandit massa enim nec dui nunc. Vitae proin sagittis nisl rhoncus mattis. Mattis pellentesque id nibh tortor id. Dictum sit amet justo donec. Adipiscing vitae proin sagittis nisl rhoncus. Egestas erat imperdiet sed euismod nisi. Id leo in vitae turpis massa sed elementum. Commodo elit at imperdiet dui accumsan. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Felis eget velit aliquet sagittis id.Quam id leo in vitae turpis massa sed. Tempor orci dapibus ultrices in iaculis nunc. At risus viverra adipiscing at in tellus. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Libero justo laoreet sit amet cursus sit. Nunc non blandit massa enim nec dui nunc. Vitae proin sagittis nisl rhoncus mattis. Mattis pellentesque id nibh tortor id. Dictum sit amet justo donec. Adipiscing vitae proin sagittis nisl rhoncus. Egestas erat imperdiet sed euismod nisi. Id leo in vitae turpis massa sed elementum. Commodo elit at imperdiet dui accumsan. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Felis eget velit aliquet sagittis id.</p>
+</main>
+<div class="footer">
+    <div>
+        <p>ijahuehfdwuehywheygyg</p>
+    </div>
+</div>
+<script>
+		window.addEventListener("load", () => {
+			document.body.classList.remove("preload");
+		});
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const nav=document.querySelector(".nav");
+
+			document.querySelector("#btnNav").addEventListener("click", () => {
+				nav.classList.add("nav--open");
+			});
+
+			document.querySelector(".nav__overlay").addEventListener("click", () => {
+				nav.classList.remove("nav--open");
+			});
+		});
+	</script>
+</body>
+</html>
+
+main.css ////////////////////////////////
+body{
+	--header-height:50px;
+
+	margin: var(--header-height)0 0 0;
+	font-family: sans-serif;
+	background: url(bgres.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	padding-top: 85px;
+	padding-bottom: 70px;
+}
+
+.preload * {
+	transition: none !important;
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--header-height);
+	background: #333333;
+	display: flex;
+}
+
+.header__button{
+	width: var(--header-height);
+	flex-shrink: 0;
+	background: none;
+	outline: none;
+	border: none;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.nav__links{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	height: 100vh;
+	width: 250px;
+	background: #ffffff;
+	transform: translateX(-250px);
+	transition: transform 0.3s;
+}
+
+.nav--open .nav__links{
+	transform: translateX(0);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav__link{
+	display: flex;
+	align-items: center;
+	color: #666666;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 12px 15px;
+	background: transform 0.2s;
+}
+
+.nav__link > i{
+	margin-right: 15px;
+}
+
+.nav__link--active{
+	color: #009578;
+}
+
+.nav__link--active,
+.nav__link:hover{
+	background: #eeeeee;
+}
+
+.nav__overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter:blur(2px);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.nav--open .nav__overlay{
+	visibility: visible;
+	opacity: 1;
+}
+
+.footer{
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	background: #333333;
+	bottom: 0;
+}
+/////////////////////////////////////////
