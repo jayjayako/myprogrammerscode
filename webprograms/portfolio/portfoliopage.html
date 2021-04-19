@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>RESPONSIVE NAVBAR</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="portfoliopagestyle.css">
+</head>
+<body class="preload">
+	<header class="header">
+		<div class="titlealign">
+			My Logo
+		</div>
+		<button class="header__button" id="btnNav" type="button1">
+			<i class="material-icons"><img src="icons/menu/whiteicon/1x/menu24.png"></i>
+		</button>
+		<div class="desktopdiv">
+			<ul class="desktopnav">
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="resume.html">Resume</a></li>
+				<li><a style="background:#1b9bff;" href="#">Portfolio</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<nav class="nav">
+		<div class="nav__links">
+			<a href="#" class="nav__link ">
+				<i class="material-icons"><img src="icons/home/1x/home24.png"></i>
+				Home
+			</a>
+			<a href="about.html" class="nav__link ">
+				<i class="material-icons"><img src="icons/about/1x/about24.png"></i>
+				About
+			</a>
+			<a href="resume.html" class="nav__link">
+				<i class="material-icons"><img src="icons/resume/1x/resume24.png"></i>
+				Resume
+			</a>
+			<a href="#" class="nav__link nav__link--active">
+				<i class="material-icons"><img src="icons/portfolio/1x/portfolio24.png"></i>
+				Portfolio
+			</a>
+			<a href="#" class="nav__link">
+				<i class="material-icons"><img src="icons/services/1x/services24.png"></i>
+				Services
+			</a>
+			<a href="contact.html" class="nav__link">
+				<i class="material-icons"><img src="icons/contact/1x/contact24.png"></i>
+				Contact
+			</a>
+		</div>
+		<div class="nav__overlay"></div>
+	</nav>
+	
+	<main class="allcontent">
+			
+		<ul class="centercontent">
+			<li>
+				<div  class="onediv1">
+					<img src="portfoliopic.png" style="width: 300px;height: 325px;">
+				</div>
+			</li>
+			<li>
+				<div class="onediv2">
+					<div style="font-family: myFirstFont;color: white;">
+						<p>Hello<br>
+						<h1>I'm Arturo</h1>
+						<p>im an IT student</p>
+					</div>
+					<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo a diam sollicitudin tempor id. Nulla at volutpat diam ut. Turpis massa sed elementum tempus egestas sed. Eget gravida cum sociis natoque. Id eu nisl nunc mi ipsum. Sed faucibus turpis in eu mi bibendum neque egestas. Sit amet mauris commodo quis imperdiet massa. Praesent elementum facilisis leo vel fringilla. Neque gravida in fermentum et sollicitudin. Fermentum iaculis eu non diam phasellus vestibulum. Porttitor leo a diam sollicitudin tempor id eu nisl. Congue quisque egestas diam in arcu cursus euismod quis viverra. Consectetur adipiscing elit pellentesque habitant morbi tristique. -->
+				</div>
+			</li>
+		</ul>
+
+	</main>
+	<script>
+		window.addEventListener("load", () => {
+			document.body.classList.remove("preload");
+		});
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const nav=document.querySelector(".nav");
+
+			document.querySelector("#btnNav").addEventListener("click", () => {
+				nav.classList.add("nav--open");
+			});
+
+			document.querySelector(".nav__overlay").addEventListener("click", () => {
+				nav.classList.remove("nav--open");
+			});
+		});
+	</script>
+</body>
+</html>
 
