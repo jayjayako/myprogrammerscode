@@ -1,0 +1,58 @@
+//to execute javascript inside a subpage
+async function includehtml(params1, params2) {
+  try {
+    var html = document.getElementById(params1);
+    let res = await fetch(params2, {
+      method: "GET",
+    });
+    let data = await res.text();
+    html.innerHTML = data;
+    let parser = new DOMParser();
+    let doc = parser.parseFromString(data, "text/html");
+    eval(doc.querySelector("script").textContent);
+  } catch (error) {}
+}
+///////////////////////////////////////////////////////
+////////////////////// to template html //////////////////////
+var mydata = "yourname";
+
+function getcodeid(elementid) {
+  let value = document.getElementById(elementid).innerHTML;
+  let output = eval("`" + value.toString() + "`");
+  document.getElementById(elementid).innerHTML = output;
+}
+
+<div id="headerid">My Name is ${mydata}</div>
+<script>
+getcodeid("headerid");
+</script>
+
+//////////////////////////////////////////////////////////////////////
+
+///////////////////////// import new css //////////////////////////////////
+function loadallcss(filename) {
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = filename;
+
+  document.getElementsByTagName("head")[0].appendChild(link);
+}
+///////////////////////////////////////////////////////////////////////////
+///////////////////////// import js defer /////////////////////////////////
+function loadalljavascript(filename) {
+  var script = document.createElement("script");
+  script.src = filename;
+  script.defer = "defer";
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
+///////////////////////////////////////////////////////////////////////////
+
+/////////////////// only load once since it is single page ////////////////////
+loadallcss("css/mainpage.css");
+loadallcss("css/loginpage.css");
+loadallcss("css/widgets.css");
+/////////////////////////////////////////////////
+/////////////////// js here /////////////////////
+loadalljavascript("js/backend.js");
+loadalljavascript("routing.js");
+//////////////////////////////////////////////////////////////////////////////////////////////
